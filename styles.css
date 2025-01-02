@@ -1,0 +1,35 @@
+body {
+    font-family: 'Comic Sans MS', cursive, sans-serif;
+    text-align: center;
+    margin: 0;
+    padding: 0;
+    background-color: #FFC0CB;
+}
+h1 {
+    color: #FF69B4;
+    font-size: 2.5em;
+    margin: 20px;
+    font-family: 'Caveat', cursive;
+}
+form {
+    margin: 20px;
+}
+select {
+    padding: 10px;
+    border: 2px solid #FF69B4;
+}
+#illustration img {
+    max-width: 150px;
+    height: auto;
+}
+#emotion-image {
+    display: inline-block;
+    vertical-align: middle;
+}
+textarea {
+    margin-top: 10px;
+    padding: 10px;
+    border: 2px solid #FF69B4;
+    border-radius: 5px;
+    resize: none;
+}

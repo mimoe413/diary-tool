@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>かわいい日記ツール</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <h1>かわいい日記ツール</h1>
+    <form id="diary-form">
+        <label for="title">タイトル:</label>
+        <input type="text" id="title" maxlength="60" placeholder="ここにタイトルを入力してください...">
+        <br>
+        <label for="emotion">今日の感情:</label>
+        <select id="emotion">
+            <option value="happy">うれしい</option>
+            <option value="sad">悲しい</option>
+            <option value="fun">楽しい</option>
+        </select>
+        <img id="emotion-image" src="" alt="感情のイメージ" style="display:none; width: 50px; height: 50px; margin-left: 10px;">
+        <br>
+        <label for="diary-text">日記:</label>
+        <textarea id="diary-text" rows="3" cols="60" maxlength="60" placeholder="ここに日記を入力してください..."></textarea>
+        <br>
+        <button type="button" onclick="saveDiary()">保存</button>
+    </form>
+    <div id="illustration"></div>
+    <script src="script.js"></script>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const illustration = document.getElementById("illustration");
+            const emotionSelect = document.getElementById("emotion");
+            const emotionImage = document.getElementById("emotion-image");
+            const diaryText = document.getElementById("diary-text");
+            let imageSrc = "";
+
+            emotionSelect.addEventListener("change", function() {
+                const emotion = emotionSelect.value;
+
+                if (emotion === "happy") {
+                    imageSrc = "./source/image/ureshi.png";
+                } else if (emotion === "sad") {
+                    imageSrc = "./source/image/kanasii.jpg";
+                } else if (emotion === "fun") {
+                    imageSrc = "./source/image/tanoshi.jpg";
+                }
+
+                if (imageSrc) {
+                    emotionImage.src = imageSrc;
+                    emotionImage.style.display = "inline-block";
+                } else {
+                    emotionImage.style.display = "none";
+                }
+            });
+        });
+
+        function saveDiary() {
+            const title = document.getElementById("title").value;
+            const emotion = document.getElementById("emotion").value;
+            const diaryText = document.getElementById("diary-text").value;
+            const today = new Date().toLocaleDateString();
+            const content = `日付: ${today}\nタイトル: ${title}\n今日の感情: ${emotion}\n日記:\n${diaryText}`;
+            const blob = new Blob([content], { type: "text/plain" });
+            const url = URL.createObjectURL(blob);
+            const a = document.createElement("a");
+            a.href = url;
+            a.download = "diary.txt";
+            document.body.appendChild(a);
+            a.click();
+            document.body.removeChild(a);
+            URL.revokeObjectURL(url);
+            alert("日記が保存されました！");
+        }
+    </script>
+</body>
+</html>
