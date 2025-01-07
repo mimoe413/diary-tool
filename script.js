@@ -9,11 +9,11 @@ document.addEventListener("DOMContentLoaded", function() {
         const emotion = emotionSelect.value;
 
         if (emotion === "happy") {
-            imageSrc = "./source/image/ureshi.png";
+            imageSrc = "./source/image/20250107_123922785_iOS.png";
         } else if (emotion === "sad") {
-            imageSrc = "./source/image/kanasii.jpg";
+            imageSrc = "./source/image/20250107_123927797_iOS.png";
         } else if (emotion === "fun") {
-            imageSrc = "./source/image/tanoshi.jpg";
+            imageSrc = "./source/image/20250107_123945161_iOS.png";
         }
 
         if (imageSrc) {
