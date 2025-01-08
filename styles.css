@@ -19,12 +19,8 @@ select {
     border: 2px solid #FF69B4;
     margin-top: 10px; /* この行を追加 */
 }
-#illustration img {
-    max-width: 150px;
-    height: auto;
-}
+
 #emotion-image {
-    display: inline-block;
     vertical-align: middle;
 }
 textarea {

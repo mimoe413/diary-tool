@@ -1,5 +1,4 @@
 document.addEventListener("DOMContentLoaded", function() {
-    const illustration = document.getElementById("illustration");
     const emotionSelect = document.getElementById("emotion");
     const emotionImage = document.getElementById("emotion-image");
     const diaryText = document.getElementById("diary-text");
@@ -7,7 +6,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     emotionSelect.addEventListener("change", function() {
         const emotion = emotionSelect.value;
-
+        //console.log(emotion);デバック機能
         if (emotion === "happy") {
             imageSrc = "./source/image/20250107_123922785_iOS.png";
         } else if (emotion === "sad") {
