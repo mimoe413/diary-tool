@@ -1,6 +1,7 @@
 document.addEventListener("DOMContentLoaded", function() {
     const emotionSelect = document.getElementById("emotion");
     const emotionImage = document.getElementById("emotion-image");
+    //HTMLのid属性がemotion-imageの要素を取得
     const diaryText = document.getElementById("diary-text");
     let imageSrc = "";
 
@@ -28,6 +29,7 @@ function saveDiary() {
     const title = document.getElementById("title").value;
     const emotion = document.getElementById("emotion").value;
     const diaryText = document.getElementById("diary-text").value;
+    //.value HTML要素の値を取得
     const today = new Date().toLocaleDateString();
     const content = `日付: ${today}\nタイトル: ${title}\n今日の感情: ${emotion}\n日記:\n${diaryText}`;
     const blob = new Blob([content], { type: "text/plain" });

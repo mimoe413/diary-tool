@@ -17,7 +17,7 @@ form {
 select {
     padding: 10px;
     border: 2px solid #FF69B4;
-    margin-top: 10px; /* この行を追加 */
+    margin-top: 10px; 
 }
 
 #emotion-image {
@@ -45,3 +45,7 @@ button {
 button:hover {
     background-color: #FF1493;
 }
+
+/* Margin → マージン　外側のスペース
+   Padding → パディング　内側のスペース
+   Border → ボーダー ふち*/
